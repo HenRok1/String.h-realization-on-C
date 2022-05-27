@@ -1977,8 +1977,31 @@ char s21_s[40] = "";
 ck_assert_int_eq(sprintf(s, "%i%i", 10, '1'), s21_sprintf(s21_s, "%i%i", 10, '1'));
 ck_assert_str_eq(s, s21_s);
 
-#test s21_sprintf_f_test_1
-char s[30] = "";
-char s21_s[30] = "";
-ck_assert_int_eq(sprintf(s, "%f", 0.123), s21_sprintf(s21_s, "%f", 0.123));
-ck_assert_str_eq(s, s21_s);
+#test to_upper_test_1
+char s1[] = "test";
+char s2[] = "tesT123";
+char *A = s21_to_upper(s1);
+char *B = s21_to_upper(s2);
+ck_assert_str_eq("TEST", A);
+ck_assert_str_eq("TEST123", B);
+free(A);
+free(B);
+
+#test to_lower_test_1
+char s1[] = "TEST";
+char s2[] = "TESt123";
+char *A = s21_to_lower(s1);
+char *B = s21_to_lower(s2);
+ck_assert_str_eq("test", A);
+ck_assert_str_eq("test123", B);
+free(A);
+free(B);
+
+#test s21_insert_test1
+    char str[] = "Johnny Silverhand";
+    char src[] = "I love my . He is very kind!";
+    s21_size_t index = 10;
+    char expected[] = "I love my Johnny Silverhand. He is very kind!";
+    char *got = (char *)s21_insert(src, str, index);
+    ck_assert_str_eq(got, expected);
+    if (got) free(got);

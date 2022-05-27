@@ -178,19 +178,19 @@ char *width_flag_plus_plumin (fmt *format, char *str) {
     return done;
 }
 
-int main() {
-    long int f = 5;
-    // scanf("%Lf", &f);
-    fmt format;
-    format.flags.minus = 0;
-    format.flags.plus = 0;
-    format.flags.space = 0;
-    format.precision.number = 19;
-    format.width.number = 0;
-    format.length.L = 0;
-    printf("\nрезультат = %s\n", s21_spec_d(registers.pValue, p_val));
-    char TEMP[55555];
-    sprintf(TEMP, "%.19Lf\n", f);
-    printf("оригинал  = %s\n", TEMP);
-    return 0;
-}
+// int main() {
+//     long int f = 5;
+//     // scanf("%Lf", &f);
+//     fmt format;
+//     format.flags.minus = 0;
+//     format.flags.plus = 0;
+//     format.flags.space = 0;
+//     format.precision.number = 19;
+//     format.width.number = 0;
+//     format.length.L = 0;
+//     printf("\nрезультат = %s\n", s21_spec_d(registers.pValue, p_val));
+//     char TEMP[55555];
+//     sprintf(TEMP, "%.19Lf\n", f);
+//     printf("оригинал  = %s\n", TEMP);
+//     return 0;
+// }
