@@ -5,6 +5,6 @@
 
 # Installation:
 ``` 
-cd src \
+cd src
 make
 ```
